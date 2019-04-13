@@ -193,4 +193,5 @@ class Comodo():
         if int(request[0]) < 0:
             return request[1]
         if int(request[0]) == 2:
+            log.info_collectSslSuccess(self.collectSsl, request)
             return request

@@ -223,8 +223,6 @@ class Domain():
         beginString = [i for i, x in enumerate(self.SslCertRaw) if x == "-----BEGIN CERTIFICATE-----"]
         endString = [i for i, x in enumerate(self.SslCertRaw) if x == "-----END CERTIFICATE-----"]
         s = '\n'
-        print(beginString)
-        print(endString)
         sslCert = {
             'cabundle' : urllib.parse.quote_plus((s.join(self.SslCertRaw[beginString[0]:endString[0] + 1]))),
             'certificate' : urllib.parse.quote_plus((s.join(self.SslCertRaw[beginString[1]:endString[1] + 1])))

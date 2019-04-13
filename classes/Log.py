@@ -26,7 +26,8 @@ class Log():
             'dcvsuccess' : 'Self DCV Validation Success',
             'sslordersuccess' : 'SSL Order was Successful :',
             'sslordererror' : 'There was an error submitting your SSL Order : ',
-            'sslcollecterror' : 'There was an error trying to collect the SSL Cert from Comodo : '
+            'sslcollecterror' : 'There was an error trying to collect the SSL Cert from Comodo : ',
+            'collectSslSuccess' : 'SSL Successfully Collected from Comodo : '
         }
         
         timestamp = datetime.today().strftime("%Y-%m-%d")
@@ -42,6 +43,8 @@ class Log():
             )
 
         self.logger = logging.getLogger('general')
+    
+    #DEBUG Methods
 
     def debug_startinst(self, debug_location):
         self.logger.debug('%s : %s', self.messages['start_class_inst'], 
@@ -58,6 +61,11 @@ class Log():
     def debug_endmethod(self, debug_location):
         self.logger.debug('%s : %s', self.messages['end_method'], 
             debug_location.__name__)
+    
+    def debug(self, message):
+        self.logger.debug('%s', message)    
+
+    #INFO Methods
 
     def info_validapi(self, debug_location, api_results):
         self.logger.info('%s : %s : %s', 
@@ -84,6 +92,31 @@ class Log():
             debug_location.__class__.__name__, self.messages['storeddcvdata'], 
             dcv_data)
 
+    def info_chowndone(self, debug_location, username, groupname):
+        self.logger.info('%s chown %s:%s %s', 
+            debug_location.__name__, username,
+            groupname, self.messages['chowndone'])
+
+    def info_dircreated(self, debug_location, filepath):
+        self.logger.info('%s : %s : %s', 
+            debug_location.__name__, filepath, 
+            self.messages['dircreated'])
+
+    def info_collectSslSuccess(self, debug_location, collectSslResponse):
+        self.logger.info('%s : %s : %s', 
+            debug_location.__name__, self.messages['collectSslSuccess'], 
+            collectSslResponse,)
+
+    def info_dcvsuccess(self, debug_location):
+        self.logger.info('%s : %s', 
+            debug_location.__name__,
+            self.messages['dcvsuccess'])
+    def info_sslOrderSuccess(self, debug_location, sslOrder):
+        self.logger.info('%s : %s : %s', debug_location, 
+            self.messages['sslordersuccess'], sslOrder)
+
+    #ERROR messages
+
     def error_apifailure(self, debug_location, api_results):
         self.logger.error('%s : %s : %s', 
             debug_location.__class__.__name__, self.messages['apifailure'],
@@ -99,25 +132,7 @@ class Log():
             debug_location.__name__, username, 
             groupname, self.messages['chownerror'], 
             exception)
-
-    def info_chowndone(self, debug_location, username, groupname):
-        self.logger.info('%s chown %s:%s %s', 
-            debug_location.__name__, username,
-            groupname, self.messages['chowndone'])
-
-    def info_dircreated(self, debug_location, filepath):
-        self.logger.info('%s : %s : %s', 
-            debug_location.__name__, filepath, 
-            self.messages['dircreated'])
-
-    def info_dcvsuccess(self, debug_location):
-        self.logger.info('%s : %s', 
-            debug_location.__name__,
-            self.messages['dcvsuccess'])
-    def info_sslOrderSuccess(self, debug_location, sslOrder):
-        self.logger.info('%s : %s : %s', debug_location, 
-            self.messages['sslordersuccess'], sslOrder)        
-
+            
     def error_dcvfailnot200(self, debug_location, url, errorCode):
         self.logger.error('%s : %s : %s : %s', 
             debug_location.__name__, url, 
@@ -136,8 +151,4 @@ class Log():
 
     def error_failedCollectSSL(self, debug_location):
         self.logger.error('%s : %s', debug_location.__name__,
-            self.messages['sslcollecterror'])
-            
-
-    def debug(self, message):
-        self.logger.debug('%s', message)        
+            self.messages['sslcollecterror'])    
