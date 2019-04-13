@@ -44,7 +44,7 @@ class Comodo():
             "test" : isTestSsl
         }
     
-        log.debug_comodoargs(self, self.args)
+        log.debug_comodoargs(self, {'creds': self.creds, 'headers': self.headers, 'args':self.args})
         log.debug_endinst(self)
 
     def setDcvMethod(self, dcvmethod):
