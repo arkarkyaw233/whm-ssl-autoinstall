@@ -1,4 +1,4 @@
-import logging
+import logging, os
 from datetime import datetime
 
 class Log():
@@ -30,7 +30,9 @@ class Log():
         }
         
         timestamp = datetime.today().strftime("%Y-%m-%d")
-        filename = 'sslinstall_' + timestamp + '.log'
+        path = os.path.dirname(os.path.realpath(__file__))
+
+        filename = path + '/../logs/sslinstall_' + timestamp + '.log'
 
         logging.basicConfig(
             filename=filename,

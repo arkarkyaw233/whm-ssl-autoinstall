@@ -27,22 +27,23 @@ class Domain():
 
         #Uses test data for testing / debugging
         if self.testMode:
-            with open('test/testCsrInputData.json', 'r') as testCsrInputData:
+            path = os.path.dirname(os.path.realpath(__file__))
+            with open(path + '/../test/testCsrInputData.json', 'r') as testCsrInputData:
                 self.csr_input_data = json.load(testCsrInputData)
                 log.info_storecsr(self, self.csr_input_data)
-            with open('test/testDomainData.json', 'r') as testDomainData:
+            with open(path + '/../test/testDomainData.json', 'r') as testDomainData:
                 self.domain_data = json.load(testDomainData)
                 log.info_gotdomdata(self,self.domain_data)
-            with open('test/testCsrData.json', 'r') as testCsrData:
+            with open(path + '/../test/testCsrData.json', 'r') as testCsrData:
                 self.csr_data = json.load(testCsrData)
                 log.info_storedcsrdata(self,self.csr_data)
-            with open('test/testDcvData.json', 'r') as testDcvData:
+            with open(path + '/../test/testDcvData.json', 'r') as testDcvData:
                 self.dcv_data = json.load(testDcvData)
                 log.info_storeddcvdata(self,self.dcv_data)
-            with open('test/testSslOrder.json', 'r') as testSslOrder:
+            with open(path + '/../test/testSslOrder.json', 'r') as testSslOrder:
                 self.sslOrder = json.load(testSslOrder)
                 log.info_sslOrderSuccess('testMode' ,self.sslOrder[1])
-            with open('test/testSslCert.json', 'r') as testSslCert:
+            with open(path + '/../test/testSslCert.json', 'r') as testSslCert:
                 self.SslCertRaw = json.load(testSslCert)
             self.sslCert = self.urlEncodeCrt()
 
