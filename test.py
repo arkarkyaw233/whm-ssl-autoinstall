@@ -6,4 +6,4 @@ from classes.Commands import Commands
 #from classes.whm import WHM
 
 #Test Commands class
-#input_args = Commands()
+input_args = Commands()
