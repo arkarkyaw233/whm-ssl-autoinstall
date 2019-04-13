@@ -1,9 +1,4 @@
-import requests
-import sys
-import json
-import time
-import random
-import string
+import requests, sys, json, time, random, string, os
 from classes.Log import Log
 log = Log()
 
@@ -19,7 +14,8 @@ class Comodo():
         }
         #Comodo login Credentials stored in a seperate Credentials file
         #JSON format {"loginName": "<login username>", "loginPassword": "<login password>"}
-        with open('comodocreds.json', 'r') as comodoCreds:
+        path = os.path.dirname(os.path.realpath(__file__))
+        with open(path + '/comodocreds.json', 'r') as comodoCreds:
                 self.creds = json.load(comodoCreds)
         	
         self.headers = {
