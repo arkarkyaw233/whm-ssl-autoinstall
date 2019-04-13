@@ -27,7 +27,8 @@ class Log():
             'sslordersuccess' : 'SSL Order was Successful :',
             'sslordererror' : 'There was an error submitting your SSL Order : ',
             'sslcollecterror' : 'There was an error trying to collect the SSL Cert from Comodo : ',
-            'collectSslSuccess' : 'SSL Successfully Collected from Comodo : '
+            'collectSslSuccess' : 'SSL Successfully Collected from Comodo : ',
+            'inputargs' : 'Input Arguments Parsed : '
         }
         
         timestamp = datetime.today().strftime("%Y-%m-%d")
@@ -66,6 +67,11 @@ class Log():
         self.logger.debug('%s', message)    
 
     #INFO Methods
+   
+    def info_argsparsed(self, debug_location, input_args):
+        self.logger.info('%s : %s : %s', 
+            debug_location.__class__.__name__, self.messages['inputargs'], 
+            input_args)
 
     def info_validapi(self, debug_location, api_results):
         self.logger.info('%s : %s : %s', 

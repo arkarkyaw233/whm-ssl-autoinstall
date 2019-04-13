@@ -15,8 +15,8 @@ class Commands():
     parser.add_argument('-C', '--country', default='', help='Country Code - 2 Chars')
     parser.add_argument('-o', '--org', default='', help= 'Organization / Company')
     parser.add_argument('-u', '--unit', default='', help='Unit / Division')
-    parser.add_argument('-t', '--testssl', default='N', help={"Y", "N"}, metavar='Comodo Test SSL Purchasing')
-    parser.add_argument('-T', '--testmode', default='N', help={"Y", "N"}, metavar='Run Script w/ Test Data')
+    parser.add_argument('-t', '--testssl', default='N', choices=['Y', 'N'], metavar='Comodo Test SSL Purchasing')
+    parser.add_argument('-T', '--testmode', default='N', help=['Y', 'N'], metavar='Run Script w/ Test Data')
     args = parser.parse_args()
  
     self.input_args = {
@@ -35,5 +35,7 @@ class Commands():
       self.input_args['testmode'] = True
     if args.testmode == 'N':
       self.input_args['testmode'] = False
+
+    log.info_argsparsed(self, self.input_args)
 
     log.debug_endinst(self)
