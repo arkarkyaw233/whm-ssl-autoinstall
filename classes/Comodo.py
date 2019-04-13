@@ -3,9 +3,11 @@ from classes.Log import Log
 log = Log()
 
 class Comodo():
-    def __init__(self, testssl):
+    def __init__(self, isTestSsl):
         """Class used to make calls to Comodo's API
         """
+
+        log.debug_startinst(self)
 
         self.urls = {
 	        'decode' : 'https://secure.comodo.net/products/%21DecodeCSR',
@@ -39,9 +41,19 @@ class Comodo():
             "uniqueValue" : uniqueValue,
             "dcvMethod" : "HTTP_CSR_HASH",
             "isCustomerValidated" : "Y",
-            "test" : testssl
+            "test" : isTestSsl
         }
+    
+        log.debug_comodoargs(self, self.args)
+        log.debug_endinst(self)
+
     def setDcvMethod(self, dcvmethod):
+        """This Method is used to set the dcvMethod to Https if necessary
+        
+        Arguments:
+            dcvmethod {string} -- If called, this should likely be 'https
+        """
+
         self.args['dcvMethod'] = dcvmethod
 
     def request(self, requestUrl, requestData):

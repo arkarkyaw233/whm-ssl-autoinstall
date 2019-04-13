@@ -28,7 +28,8 @@ class Log():
             'sslordererror' : 'There was an error submitting your SSL Order : ',
             'sslcollecterror' : 'There was an error trying to collect the SSL Cert from Comodo : ',
             'collectSslSuccess' : 'SSL Successfully Collected from Comodo : ',
-            'inputargs' : 'Input Arguments Parsed : '
+            'inputargs' : 'Input Arguments Parsed : ',
+            'comodoargs' : 'Comodo.args has been stored as : '
         }
         
         timestamp = datetime.today().strftime("%Y-%m-%d")
@@ -64,7 +65,12 @@ class Log():
             debug_location.__name__)
     
     def debug(self, message):
-        self.logger.debug('%s', message)    
+        self.logger.debug('%s', message)   
+
+    def debug_comodoargs(self, debug_location, comodoargs):
+        self.logger.debug('%s : %s : %s', 
+            debug_location.__class__.__name__, 
+            self.messages['comodoargs'], comodoargs) 
 
     #INFO Methods
    
