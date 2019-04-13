@@ -3,7 +3,7 @@ from pwd import getpwnam
 from grp import getgrnam
 
 from classes.Log import Log
-from classes.whm import WHM as WHM
+from classes.whm import WHM
 from classes.Comodo import Comodo
 from classes.Commands import Commands
 
