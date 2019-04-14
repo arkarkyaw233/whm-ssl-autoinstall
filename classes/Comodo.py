@@ -103,7 +103,7 @@ class Comodo():
             'product': self.args["product"],
             'csr': csr_data
             }
-
+        log.debug(request_data)
         response = self.request(self.urls['decode'], 
             request_data)
 

@@ -9,15 +9,21 @@ path = os.path.dirname(os.path.realpath(__file__))
 #from classes.Log import Log
 #from classes.whm import WHM
 
+#
 #Test Commands class
+#
+
 input_args = Commands()
 
+#
 #Test Comodo class
+#
+
 com = Comodo(input_args.input_args['testssl'])
 
 #Test Comodo.setDcvMethod
 print('DCV Method before Comodo.setDcvMethod: ' + com.args['dcvMethod'])
-com.setDcvMethod('HTTPS_CSR_HASH')
+com.setDcvMethod('HTTP_CSR_HASH')
 print('DCV Method after Comodo.setDcvMethod: ' + com.args['dcvMethod'])
 
 #Test Comodo.request Methods
