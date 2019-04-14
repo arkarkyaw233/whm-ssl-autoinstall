@@ -38,4 +38,5 @@ com = Comodo('Y')
 with open(path + '/test/testCsrData.json', 'r') as testCsrData:
     csr_data = json.load(testCsrData)
 print('Test Comodo.orderSsl\n SSL Order No:: ')
-print(com.orderSsl(csr_data['csr']))
+orderSsl = com.orderSsl(csr_data['csr'])
+print(orderSsl[1])
