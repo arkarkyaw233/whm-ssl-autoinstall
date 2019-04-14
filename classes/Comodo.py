@@ -53,6 +53,7 @@ class Comodo():
         Arguments:
             dcvmethod {string} -- If called, this should likely be 'https
         """
+        log.debug_startmethod(self.setDcvMethod)
 
         self.args['dcvMethod'] = dcvmethod
 

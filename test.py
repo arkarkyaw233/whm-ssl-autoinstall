@@ -8,4 +8,7 @@ from classes.Comodo import Comodo
 #Test Commands class
 input_args = Commands()
 com = Comodo(input_args.input_args['testssl'])
+print('DCV Method before Comodo.setDcvMethod: ' + com.args['dcvMethod'])
+com.setDcvMethod('https')
+print('DCV Method after Comodo.setDcvMethod: ' + com.args['dcvMethod'])
 #test
