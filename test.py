@@ -29,7 +29,13 @@ com = Comodo('Y')
 #Test Comodo.request Methods
 
 #Test Comodo.get_csr_hashes
+#with open(path + '/test/testCsrData.json', 'r') as testCsrData:
+#    csr_data = json.load(testCsrData)
+#print('Test Comodo.get_csr_hashes ::')
+#print(com.get_csr_hashes(csr_data['csr']))
+
+#Test Comodo.orderSsl
 with open(path + '/test/testCsrData.json', 'r') as testCsrData:
     csr_data = json.load(testCsrData)
-print('Test Comodo.get_csr_hashes ::')
-print(com.get_csr_hashes(csr_data['csr']))
+print('Test Comodo.orderSsl\n SSL Order No:: ')
+print(com.orderSsl(testCsrData['csr']))
