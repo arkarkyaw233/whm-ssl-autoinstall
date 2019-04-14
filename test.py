@@ -13,18 +13,18 @@ path = os.path.dirname(os.path.realpath(__file__))
 #Test Commands class
 #
 
-input_args = Commands()
+#input_args = Commands()
 
 #
 #Test Comodo class
 #
 
-com = Comodo(input_args.input_args['testssl'])
+com = Comodo('Y')
 
 #Test Comodo.setDcvMethod
-print('DCV Method before Comodo.setDcvMethod: ' + com.args['dcvMethod'])
-com.setDcvMethod('HTTP_CSR_HASH')
-print('DCV Method after Comodo.setDcvMethod: ' + com.args['dcvMethod'])
+#print('DCV Method before Comodo.setDcvMethod: ' + com.args['dcvMethod'])
+#com.setDcvMethod('HTTP_CSR_HASH')
+#print('DCV Method after Comodo.setDcvMethod: ' + com.args['dcvMethod'])
 
 #Test Comodo.request Methods
 
