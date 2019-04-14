@@ -54,4 +54,6 @@ com = Comodo('Y')
 
 with open(path + '/test/testSslOrder.json', 'r') as testSslOrder:
     testSslOrder = json.load(testSslOrder)
-print(testSslOrder[1])
+testcollect = com.collectSsl(testSslOrder[1])
+print('Test Comodo.collectSsl:: ')
+print(testcollect)
