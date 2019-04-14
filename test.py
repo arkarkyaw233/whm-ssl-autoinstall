@@ -31,4 +31,5 @@ print('DCV Method after Comodo.setDcvMethod: ' + com.args['dcvMethod'])
 #Test Comodo.get_csr_hashes
 with open(path + '/test/testCsrData.json', 'r') as testCsrData:
     csr_data = json.load(testCsrData)
-testResponse = com.get_csr_hashes(csr_data['csr'])
+print('Test Comodo.get_csr_hashes ::')
+print(com.get_csr_hashes(csr_data['csr']))
