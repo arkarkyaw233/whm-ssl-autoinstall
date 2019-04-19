@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: whmsslinstall
-Version: 0.1
+Version: 0.2
 Summary: An Application to order and install Comodo DV SSL Certificates
 Home-page: https://github.com/twmsllc/whm-ssl-autoinstall
 Author: James Rosado

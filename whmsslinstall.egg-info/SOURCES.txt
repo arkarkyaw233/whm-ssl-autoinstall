@@ -1,6 +1,7 @@
 README.md
 setup.py
 sslinstall
+bin/sslinstall
 classes/Commands.py
 classes/Comodo.py
 classes/Dom.py
