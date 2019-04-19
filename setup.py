@@ -8,9 +8,9 @@ setuptools.setup(
 
      name='whmsslinstall',  
 
-     version='0.1',
+     version='0.2',
 
-     scripts=['sslinstall'] ,
+     scripts=['bin/sslinstall'] ,
 
      author="James Rosado",
 
