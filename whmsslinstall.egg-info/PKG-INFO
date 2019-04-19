@@ -123,7 +123,7 @@ Description: # WHMAPI SSL Auto Installer
                 I don't know if I would have ever picked up Python without that.
         
 Platform: UNKNOWN
-Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
 Classifier: License :: GNU General Public License
 Classifier: Operating System :: CentOS 6+
 Classifier: CPanel :: EasyApache4+ 
